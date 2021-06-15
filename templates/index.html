@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title>Prediction of Students performance</title>
+</head>
+
+<style>
+  html {
+  overflow-x: hidden;
+    }
+body {
+  background: url(Flat-Mountains.svg);
+}
+
+
+/* preloader */
+#loading {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: #fff
+  url(Spinner-1s-200px.gif)
+  no-repeat center center;	
+	z-index: 99999;
+}
+/* /preloader */
+
+.navbar-brand {
+  font-size: 25px;
+}
+
+.navbar-nav {
+  padding: 0px 20px 0px 405px;
+  font-size: 22px;
+}
+
+.nav-item {
+  padding: 0px 10px
+}
+
+.nav-item a:hover {
+  background-color: rgb(199, 182, 156);
+  border-radius: 12px;
+  color: black;
+}
+
+.nav-item {
+  padding: 0px 10px;
+}
+
+#first {
+  height: 200px;
+  width: 350px;
+}
+
+.welcome {
+  font-size: 26px;
+  margin: 15px;
+  text-align: center;
+  font-family: emoji;
+}
+
+.picture {
+margin-left:90px;
+}
+
+#second {
+  height: 200px;
+  width: 350px;  
+}
+
+#third {
+  height: 200px;
+  width: 350px;
+}
+
+.word {
+  text-align: center;
+  font-size: 26px;
+}
+
+.charachteristics {
+  margin: 15px 15px;
+  text-align: center;
+}
+
+.row-1, .row-2, .row-3, .row-4, .row-5 {
+  padding: 10px 30px;
+}
+
+.button {
+  padding: 20px 30px;
+}
+
+#Gender, #guardian, #famsup, #paid, #activity, #internet, #medu, #study-time, #failure, #Go-out, #Health, #Absences, #G1, #G2 {
+  margin: 0px 20px 0px 20px;
+}
+
+
+
+#submit-btn {
+  padding: 0px 20px;
+  margin: 0px 10px;
+}
+
+#reset-btn {
+  padding: 0px 20px;
+  margin: 0px 10px;
+}
+
+#first, #second, #third {
+  border: 8px solid darkkhaki;
+  border-radius: 25px;
+}
+
+#Activity {
+  width: 86px;
+}
+
+.container {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.about {
+  /* background-color: rgb(201, 126, 14); */
+  text-align: center;
+  /* margin: 10px 40px 10px 40px; */
+  /* padding: 10px 40px 10px 40px; */
+
+}
+
+.about-content {
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.about-title {
+  font-size: 26px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 24.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  /* margin: 40px; */
+  width: 270px;
+}
+
+
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after,
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.row{
+margin-left: 60px;
+}
+
+.contact-us {
+  margin-top: 1rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  background-color: black;
+  text-align: center;
+  color: white;
+  font-family: emoji;
+}
+
+.container {
+  font-size: 20px;
+  font-size: 13px;
+}
+
+.name-title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#myBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: red; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+#myBtn:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+</style>
+
+<body onload="myFunction()">
+  <div id="loading"></div>
+
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{{ url_for('index') }}"> <b> STUDENT PERFORMANCE PREDICTION </b> </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#About">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- title -->
+  <div class="welcome"> <b> WELCOME TO STUDENT PERFORMANCE PREDICTION SYSTEM </b> </div>
+  <!-- /title
+ -->
+  <!-- 3-Images -->
+  <div class="picture ">
+    <img src="static/images/glenn-carstens-peters-npxXWgQ33ZQ-unsplash.jpg" alt="" id="first">
+    <img src="static/images/aryan-dhiman-iGLLtLINSkw-unsplash.jpg" alt="" id="second">
+    <img src="static/images/luca-bravo-XJXWbfSo2f0-unsplash.jpg" alt="" id="third">
+  </div>
+  <!-- /3-Images -->
+
+  <div class="word"> <b> PREDICTION </b> </div>
+
+  <!-- form -->
+  <form class="charachteristics" action="{{ url_for('predict') }}" method="post">
+    <div class="row-1">
+      <!-- <label for="Gender">Gender : </label> -->
+      <!-- <input type="Gender" name="Gender" id="Gender" placeholder="Gender"> -->
+      <input list="browsers" name="gender" placeholder="Gender" id="Gender">
+      <datalist id="browsers" >
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </datalist>
+
+      <!-- <label for="Guardian" id="Guardian">Guardian : </label> -->
+      <!-- <input type="Guardian" name="Guardian" id="guardian" placeholder="Guardian"> -->
+      <input type="cityname" name="guardian" placeholder="Guardian" list="cityname" id="guardian">
+      <datalist id="cityname">
+        <option value="Father">
+        <option value="Mother">
+        <option value="Other">
+      </datalist>
+
+      <!-- <label for="Famsup" id="Famsup">Famsup : </label> -->
+      <input type="Famsup" name="Famsup" id="famsup" list="Famsup" placeholder="Family Support">
+      <datalist id="Famsup">
+        <option value="Yes">
+        <option value="No">
+      </datalist>
+    </div>
+
+    <div class="row-2">
+      <!-- <label for="Paid" id="Paid">Paid : </label> -->
+      <input type="Extra-Classes" name="Extra-Classes" list="Paid" id="paid" placeholder="Extra-Classes">
+      <datalist id="Paid">
+        <option value="Yes">
+        <option value="No">
+      </datalist>
+
+
+      <!-- <label for="Activity" id="Activity">Activity:</label> -->
+      <input type="Activity" name="Activity" list="Activity" id="activity" placeholder="Activities">
+      <datalist id="Activity">
+        <option value="Yes">
+        <option value="No">
+      </datalist>
+
+      <!-- <label for="Internet" id="Internet">Internet : </label> -->
+      <input type="Internet" name="Internet" list="Internet" id="internet" placeholder="Usage of internet">
+      <datalist id="Internet">
+        <option value="Yes">
+        <option value="No">
+      </datalist>
+    </div>
+
+    <div class="row-3">
+      <!-- <label for="Medu" id="Medu">Medu : </label> -->
+      <!-- <input type="number" name="Medu" id="medu" placeholder="Mother's-education"> -->
+      <!-- <input type="text" name="medu" list="0-4" placeholder="Mother's-education" id="medu"> -->
+      <input type="text" placeholder="Mother's-education" list="Medu" id="medu">
+
+      <datalist id="Medu">
+        <option value="None">
+        <option value="Primary">
+        <option value="Secondary">
+        <option value="Higher">
+      </datalist>
+
+      <!-- <label for="Study-time" id="Study-time">Study-time : </label> -->
+      <input type="text" name="Study-time" list="Study-time"id="study-time" placeholder="Study-time">
+
+
+      <!-- <label for="Failure" id="Failure">Failure : </label> -->
+      <input type="Failure" name="Failure" list="Failure" id="failure" placeholder="Past class Failure">
+      <datalist id="Failure">
+        <option value="1 ">
+        <option value="2 ">
+        <option value="3 ">
+        <option value="4 ">
+       </datalist>
+    </div>
+
+    <div class="row-4">
+      <!-- <label for="Go-out">Go-out : </label> -->
+      <input type="text" name="Go-out" list="Going Out" id="Go-out" placeholder="Going Out">
+      <datalist id="Going Out">
+        <option value="Very-Low">
+        <option value="Low">
+        <option value="Medium">
+        <option value="High">
+        <option value="Very-High">
+     </datalist>
+
+      <!-- <label for="Absences">Absences : </label> -->
+      <input name="Absences" id="Absences" placeholder="Absences">
+      
+
+      <!-- <label for="Health">Health : </label> -->
+      <input type="text" name="Health" list="health" id="Health" placeholder="Health">
+      <datalist id="health">
+        <option value="Very-Bad">
+        <option value="Bad">
+        <option value="Fine">
+        <option value="Good">
+        <option value="Very-Good">
+       </datalist>
+    </div>
+
+    <div class="row-5">
+      <!-- <label for="G1">G1 : </label> -->
+      <input name="sem1" id="G1" placeholder="Sem-I Marks">
+
+      <!-- <label for="G2">G2 : </label> -->
+      <input name="sem2" id="G2" placeholder="Sem-II Marks">
+    </div>
+
+    <!-- <div class="col-12">
+      <button type="submit" class="btn btn-primary">Sign in</button>
+    </div> -->
+
+    <div class="col-12 button">
+      <button type="submit" class="btn btn-success" id="submit-btn">Submit </button>
+      <button type="reset" class="btn btn-danger" id="reset-btn">Reset</button>
+      <!-- <input type="reset" value="Reset" id="reset-btn"> -->
+    </div>
+  </form>
+  <!-- /form -->
+
+  <!-- About-section -->
+  <div class="about-section" id="About">
+    <h1>About Us Page</h1>
+    <p>Are you a student who is tired of examinations and been worried about your results when they are to be declared
+      ?<br>
+      Does it seem too much of a hassle ?<br>
+      If your answer is yes, then you've come to right place! <br>
+      Student performance prediction is a platform where you can literraly know your examination score before you write
+      your paper. <br>
+      How do this work ? <br>
+      Here we actually need some charachteristics to be filled through which we can calculate your exam score before
+      your exams. <br>
+      By doing so many students have enhanced their grades/score.
+
+
+
+
+
+
+      <!--       
+      Predicting student's academic performance is critical for educational institution becausee strategic
+       programs can be planned in improving or maintaining student's performance during their period of studies
+       in the instructions.The performance of the academic performance in this study is measured by their
+       cumulative grade point average (CGPA) upon graduating. By the prediction students can enhance their performance. -->
+
+
+    </p>
+  </div>
+  <!-- /About-section -->
+
+  <!-- Contact -->
+  <h2 class="contact-us" id="Contact" style="text-align:center">CONTACT US</h2>
+  <div class="row">
+    <div class="column">
+      <div class="card">
+        <img src="static/images/profile.jpg" alt="Jane" style="width:100%" height="150px">
+        <div class="container">
+          <h2 class="name-title">SHUBHAM PAWAR</h2>
+          <p class="title">Project Head</p>
+          <p>Mobile: 8830209883</p>
+          <p>Email: shubhampawar5351@gmail.com</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+        <img src="static/images/sk.jpeg" alt="Mike" style="width:100%" height="150px">
+        <div class="container">
+          <h2 class="name-title">SHUBHAM KADAM</h2>
+          <p class="title">Project Backend Part</p>
+          <p>Mobile: 9823394541</p>
+          <p>Email: shubham22kadam@gmail.com</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+        <img src="static/images/WhatsApp Image 2021-06-12 at 8.26.02 PM (1).jpeg" alt="John" style="width:100%" height="150px">
+        <div class="container">
+          <h2 class="name-title">OMKAR JADHAV</h2>
+          <p class="title">Project Designer</p>
+          <p>Mobile: 9561743832</p>
+          <p>Email: jadhavomkar1299@gmail.com</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+        <img src="static/images/pj.jpeg" alt="John" style="width:100%" height="150px">
+        <div class="container">
+          <h2 class="name-title">PRATIK JADHAV</h2>
+          <p class="title">Frontend Designer</p>
+          <p>Mobile: 7020671372</p>
+          <p>Email: pratikj0203@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Contact -->
+
+
+  <!-- Copyright -->
+  <footer class="bg-dark text-center text-white">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2021 Copyright: All Rights Reserved
+      <!-- <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a> -->
+    </div>
+  </footer>
+  <!-- /Copyright -->
+
+  <!-- preloader -->
+  <script>
+    var preloader = document.getElementById("loading");
+
+    function myFunction() {
+      preloader.style.display = 'none';
+    }
+
+  </script>
+  <!-- /preloader -->
+
+  <script>
+    //Get the button:
+    mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+  </script>
+
+
+</body>
+
+</html>
