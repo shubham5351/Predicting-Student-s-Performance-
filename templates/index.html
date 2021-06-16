@@ -292,7 +292,7 @@ background-size: cover;
     <div class="row-1">
       <!-- <label for="Gender">Gender : </label> -->
       <!-- <input type="Gender" name="Gender" id="Gender" placeholder="Gender"> -->
-      <input list="browsers" name="gender" placeholder="Gender" id="Gender">
+      <input list="browsers" name="gender" placeholder="Gender" id="Gender" required>
       <datalist id="browsers" >
         <option value="Male">Male</option>
         <option value="Female">Female</option>
@@ -300,7 +300,7 @@ background-size: cover;
 
       <!-- <label for="Guardian" id="Guardian">Guardian : </label> -->
       <!-- <input type="Guardian" name="Guardian" id="guardian" placeholder="Guardian"> -->
-      <input type="cityname" name="guardian" placeholder="Guardian" list="cityname" id="guardian">
+      <input type="cityname" name="guardian" placeholder="Guardian" list="cityname" id="guardian" required>
       <datalist id="cityname">
         <option value="Father">
         <option value="Mother">
@@ -308,7 +308,7 @@ background-size: cover;
       </datalist>
 
       <!-- <label for="Famsup" id="Famsup">Famsup : </label> -->
-      <input type="Famsup" name="Famsup" id="famsup" list="Famsup" placeholder="Family Support">
+      <input type="Famsup" name="Famsup" id="famsup" list="Famsup" placeholder="Family Support" required>
       <datalist id="Famsup">
         <option value="Yes">
         <option value="No">
@@ -317,7 +317,7 @@ background-size: cover;
 
     <div class="row-2">
       <!-- <label for="Paid" id="Paid">Paid : </label> -->
-      <input type="Extra-Classes" name="Extra-Classes" list="Paid" id="paid" placeholder="Extra-Classes">
+      <input type="Extra-Classes" name="Extra-Classes" list="Paid" id="paid" placeholder="Extra-Classes" required>
       <datalist id="Paid">
         <option value="Yes">
         <option value="No">
@@ -325,14 +325,14 @@ background-size: cover;
 
 
       <!-- <label for="Activity" id="Activity">Activity:</label> -->
-      <input type="Activity" name="Activity" list="Activity" id="activity" placeholder="Activities">
+      <input type="Activity" name="Activity" list="Activity" id="activity" placeholder="Activities" required>
       <datalist id="Activity">
         <option value="Yes">
         <option value="No">
       </datalist>
 
       <!-- <label for="Internet" id="Internet">Internet : </label> -->
-      <input type="Internet" name="Internet" list="Internet" id="internet" placeholder="Usage of internet">
+      <input type="Internet" name="Internet" list="Internet" id="internet" placeholder="Usage of internet" required>
       <datalist id="Internet">
         <option value="Yes">
         <option value="No">
@@ -343,7 +343,7 @@ background-size: cover;
       <!-- <label for="Medu" id="Medu">Medu : </label> -->
       <!-- <input type="number" name="Medu" id="medu" placeholder="Mother's-education"> -->
       <!-- <input type="text" name="medu" list="0-4" placeholder="Mother's-education" id="medu"> -->
-      <input type="text" placeholder="Mother's-education" list="Medu" id="medu">
+      <input type="text" placeholder="Mother's-education" list="Medu" id="medu" required>
 
       <datalist id="Medu">
         <option value="None">
@@ -353,11 +353,11 @@ background-size: cover;
       </datalist>
 
       <!-- <label for="Study-time" id="Study-time">Study-time : </label> -->
-      <input type="text" name="Study-time" list="Study-time"id="study-time" placeholder="Study-time">
+      <input type="text" name="Study-time" list="Study-time"id="study-time" placeholder="Study-time" required>
 
 
       <!-- <label for="Failure" id="Failure">Failure : </label> -->
-      <input type="Failure" name="Failure" list="Failure" id="failure" placeholder="Past class Failure">
+      <input type="Failure" name="Failure" list="Failure" id="failure" placeholder="Past class Failure" required>
       <datalist id="Failure">
         <option value="1 ">
         <option value="2 ">
@@ -368,7 +368,7 @@ background-size: cover;
 
     <div class="row-4">
       <!-- <label for="Go-out">Go-out : </label> -->
-      <input type="text" name="Go-out" list="Going Out" id="Go-out" placeholder="Going Out">
+      <input type="text" name="Go-out" list="Going Out" id="Go-out" placeholder="Going Out" required>
       <datalist id="Going Out">
         <option value="Very-Low">
         <option value="Low">
@@ -378,11 +378,11 @@ background-size: cover;
      </datalist>
 
       <!-- <label for="Absences">Absences : </label> -->
-      <input name="Absences" id="Absences" placeholder="Absences">
+      <input name="Absences" id="Absences" placeholder="Absences" required>
       
 
       <!-- <label for="Health">Health : </label> -->
-      <input type="text" name="Health" list="health" id="Health" placeholder="Health">
+      <input type="text" name="Health" list="health" id="Health" placeholder="Health" required>
       <datalist id="health">
         <option value="Very-Bad">
         <option value="Bad">
@@ -394,10 +394,10 @@ background-size: cover;
 
     <div class="row-5">
       <!-- <label for="G1">G1 : </label> -->
-      <input name="sem1" id="G1" placeholder="Sem-I Marks">
+      <input name="sem1" id="G1" placeholder="Sem-I Marks" required>
 
       <!-- <label for="G2">G2 : </label> -->
-      <input name="sem2" id="G2" placeholder="Sem-II Marks">
+      <input name="sem2" id="G2" placeholder="Sem-II Marks" required>
     </div>
 
     <!-- <div class="col-12">
@@ -415,12 +415,14 @@ background-size: cover;
   <!-- About-section -->
   <div class="about-section" id="About">
     <h1>About Us Page</h1>
+    <br><br>
     <p>Are you a student who is tired of examinations and been worried about your results when they are to be declared
       ?<br>
+      <br>
       Does it seem too much of a hassle ?<br>
-      If your answer is yes, then you've come to right place! <br>
+      If your answer is yes, then you've come to right place! <br><br><br>
       Student performance prediction is a platform where you can literraly know your examination score before you write
-      your paper. <br>
+      your paper. <br><br>
       How do this work ? <br>
       Here we actually need some charachteristics to be filled through which we can calculate your exam score before
       your exams. <br>
@@ -443,7 +445,7 @@ background-size: cover;
   <!-- /About-section -->
 
   <!-- Contact -->
-  <h2 class="contact-us" id="Contact" style="text-align:center">CONTACT US</h2>
+  <h2 class="contact-us" id="Contact" style="text-align:center">CONTACT US</h2><br><br>
   <div class="row">
     <div class="column">
       <div class="card">
@@ -495,7 +497,7 @@ background-size: cover;
   </div>
   <!-- /Contact -->
 
-
+<br><br>
   <!-- Copyright -->
   <footer class="bg-dark text-center text-white">
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
