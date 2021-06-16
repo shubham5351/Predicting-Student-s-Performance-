@@ -42,7 +42,7 @@
 
 #first {
   height: 200px;
-  width: 350px;
+  width: 430px;
 }
 
 .welcome {
@@ -53,17 +53,7 @@
 }
 
 .picture {
-margin-left:90px;
-}
-
-#second {
-  height: 200px;
-  width: 350px;  
-}
-
-#third {
-  height: 200px;
-  width: 350px;
+text-align:center;
 }
 
 .word {
@@ -87,8 +77,6 @@ margin-left:90px;
 #Gender, #guardian, #famsup, #paid, #activity, #internet, #medu, #study-time, #failure, #Go-out, #Health, #Absences, #G1, #G2 {
   margin: 0px 20px 0px 20px;
 }
-
-
 
 #submit-btn {
   padding: 0px 20px;
@@ -242,6 +230,12 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 background-attachment: fixed;
 background-size: cover;
 }
+
+#picture{
+tesx-align:center;
+ height: 200px;
+  width: 350px;
+}
 </style>
 
 <body id=main>
@@ -253,10 +247,7 @@ background-size: cover;
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="{{ url_for('index') }}"> <b> STUDENT PERFORMANCE PREDICTION </b> </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+
       <div class="collapse navbar-collapse " id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
@@ -278,13 +269,11 @@ background-size: cover;
   <!-- /title
  -->
   <!-- 3-Images -->
-  <div class="picture ">
+  <div class="picture" >
     <img src="static/images/glenn-carstens-peters-npxXWgQ33ZQ-unsplash.jpg" alt="" id="first">
-    <img src="static/images/aryan-dhiman-iGLLtLINSkw-unsplash.jpg" alt="" id="second">
-    <img src="static/images/luca-bravo-XJXWbfSo2f0-unsplash.jpg" alt="" id="third">
   </div>
   <!-- /3-Images -->
-
+  <br>
   <div class="word"> <b> PREDICTION </b> </div>
 
   <!-- form -->
@@ -507,7 +496,6 @@ background-size: cover;
   </footer>
   <!-- /Copyright -->
 
-  <!-- preloader -->
   <script>
     var preloader = document.getElementById("loading");
 
@@ -516,7 +504,6 @@ background-size: cover;
     }
 
   </script>
-  <!-- /preloader -->
 
   <script>
     //Get the button:
